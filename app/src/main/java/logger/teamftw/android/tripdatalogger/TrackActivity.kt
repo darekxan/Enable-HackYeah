@@ -78,7 +78,7 @@ class TrackActivity : EasyLocationAppCompatActivity() {
     private fun sendData() {
         val body = gson.toJson(Points(events))
         "http://a02bfe8e.ngrok.io/routes/mark_extreme_points".httpPut().body(body).response { request, response, result ->
-            Toast.makeText(this, "Activity sent", Toast.LENGTH_LONG)
+            Toast.makeText(this, "Activity uploaded", Toast.LENGTH_LONG).show()
         }
         events.clear()
     }
